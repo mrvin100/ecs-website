@@ -55,13 +55,13 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export function NavigationMenuDemo() {
+export function Navbar() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-          {/* <NavigationMenuContent>
+          <NavigationMenuTrigger>Home</NavigationMenuTrigger>
+          <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
@@ -91,11 +91,11 @@ export function NavigationMenuDemo() {
                 Styles for headings, paragraphs, lists...etc
               </ListItem>
             </ul>
-          </NavigationMenuContent> */}
+          </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-          {/* <NavigationMenuContent>
+          <NavigationMenuTrigger>About</NavigationMenuTrigger>
+          <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
                 <ListItem
@@ -107,12 +107,19 @@ export function NavigationMenuDemo() {
                 </ListItem>
               ))}
             </ul>
-          </NavigationMenuContent> */}
+          </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="#services" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
+              Services
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="#contact" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Contact
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -149,7 +156,7 @@ ListItem.displayName = "ListItem";
 
 const Header = () => {
   return (
-    <header className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <header className="bg-white dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#">
           <span className="self-center text-2xl font-medium">Ecs</span>
@@ -158,7 +165,7 @@ const Header = () => {
           <Button>Get stated</Button>
         </div>
         <div className="items-center justify-center hidden w-full md:flex md:w-auto md:order-1">
-          <NavigationMenuDemo />
+          <Navbar />
           {/* <nav>
             <ul>
               <li>
